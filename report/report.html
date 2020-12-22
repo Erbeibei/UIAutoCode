@@ -194,9 +194,9 @@ function showOutput(id, name) {
 
 <div class='page-header'>
 <h1>Website test report</h1>
-<p class='attribute'><strong>开始时间:</strong> 2020-06-10 14:57:48</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:41.783605</p>
-<p class='attribute'><strong>状态:</strong> 通过 3</p>
+<p class='attribute'><strong>开始时间:</strong> 2020-12-22 15:29:06</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:15.797937</p>
+<p class='attribute'><strong>状态:</strong> 通过 1</p>
 
 </div>
 <p class='description'>测试报告简介</p>
@@ -228,180 +228,23 @@ function showOutput(id, name) {
 </tr>
 
 <tr class='passClass'>
-    <td>TestRegister</td>
-    <td>3</td>
-    <td>3</td>
+    <td>TestLogin</td>
+    <td>1</td>
+    <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c1',3)">详情</a></td>
+    <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_register2</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
-        通过</a>
-
-    <div id='div_pt1.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt1.1: --- Logging error ---
-Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\logging\__init__.py", line 980, in emit
-    msg = self.format(record)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\logging\__init__.py", line 830, in format
-    return fmt.format(record)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\logging\__init__.py", line 567, in format
-    record.message = record.getMessage()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\logging\__init__.py", line 330, in getMessage
-    msg = msg % self.args
-TypeError: not all arguments converted during string formatting
-Call stack:
-  File "E:/PycharmProjects/Zy_School/test/case/zy_school_case/test_register.py", line 144, in &lt;module&gt;
-    runner.run(suite)
-  File "E:\PycharmProjects\Zy_School\utils\HTMLTestRunner.py", line 685, in run
-    test(result)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\unittest\suite.py", line 84, in __call__
-    return self.run(*args, **kwds)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\unittest\suite.py", line 122, in run
-    test(result)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\unittest\case.py", line 648, in __call__
-    return self.run(*args, **kwds)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\unittest\case.py", line 600, in run
-    testMethod()
-  File "E:/PycharmProjects/Zy_School/test/case/zy_school_case/test_register.py", line 69, in test_register2
-    self.home_page.switch_to_window()
-  File "E:\PycharmProjects\Zy_School\test\common\page.py", line 82, in switch_to_window
-    logger.debug(self.driver.current_url, self.driver.title)
-Message: 'http://www.zhongye.net/reg.aspx'
-Arguments: ('免费注册|中业网校',)
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt1.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_register3</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
-        通过</a>
-
-    <div id='div_pt1.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt1.2: --- Logging error ---
-Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\logging\__init__.py", line 980, in emit
-    msg = self.format(record)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\logging\__init__.py", line 830, in format
-    return fmt.format(record)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\logging\__init__.py", line 567, in format
-    record.message = record.getMessage()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\logging\__init__.py", line 330, in getMessage
-    msg = msg % self.args
-TypeError: not all arguments converted during string formatting
-Call stack:
-  File "E:/PycharmProjects/Zy_School/test/case/zy_school_case/test_register.py", line 144, in &lt;module&gt;
-    runner.run(suite)
-  File "E:\PycharmProjects\Zy_School\utils\HTMLTestRunner.py", line 685, in run
-    test(result)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\unittest\suite.py", line 84, in __call__
-    return self.run(*args, **kwds)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\unittest\suite.py", line 122, in run
-    test(result)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\unittest\case.py", line 648, in __call__
-    return self.run(*args, **kwds)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\unittest\case.py", line 600, in run
-    testMethod()
-  File "E:/PycharmProjects/Zy_School/test/case/zy_school_case/test_register.py", line 92, in test_register3
-    self.home_page.switch_to_window()
-  File "E:\PycharmProjects\Zy_School\test\common\page.py", line 82, in switch_to_window
-    logger.debug(self.driver.current_url, self.driver.title)
-Message: 'http://www.zhongye.net/reg.aspx'
-Arguments: ('免费注册|中业网校',)
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt1.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_register4</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
-        通过</a>
-
-    <div id='div_pt1.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt1.3: --- Logging error ---
-Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\logging\__init__.py", line 980, in emit
-    msg = self.format(record)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\logging\__init__.py", line 830, in format
-    return fmt.format(record)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\logging\__init__.py", line 567, in format
-    record.message = record.getMessage()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\logging\__init__.py", line 330, in getMessage
-    msg = msg % self.args
-TypeError: not all arguments converted during string formatting
-Call stack:
-  File "E:/PycharmProjects/Zy_School/test/case/zy_school_case/test_register.py", line 144, in &lt;module&gt;
-    runner.run(suite)
-  File "E:\PycharmProjects\Zy_School\utils\HTMLTestRunner.py", line 685, in run
-    test(result)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\unittest\suite.py", line 84, in __call__
-    return self.run(*args, **kwds)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\unittest\suite.py", line 122, in run
-    test(result)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\unittest\case.py", line 648, in __call__
-    return self.run(*args, **kwds)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python35\Lib\unittest\case.py", line 600, in run
-    testMethod()
-  File "E:/PycharmProjects/Zy_School/test/case/zy_school_case/test_register.py", line 117, in test_register4
-    self.home_page.switch_to_window("http://www.zhongye.net/reg.aspx")
-  File "E:\PycharmProjects\Zy_School\test\common\page.py", line 82, in switch_to_window
-    logger.debug(self.driver.current_url, self.driver.title)
-Message: 'http://www.zhongye.net/reg.aspx'
-Arguments: ('免费注册|中业网校',)
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+    <td class='none'><div class='testcase'>test_login_1</div></td>
+    <td colspan='5' align='center'>通过</td>
 </tr>
 
 <tr id='total_row'>
     <td>总计</td>
-    <td>3</td>
-    <td>3</td>
+    <td>1</td>
+    <td>1</td>
     <td>0</td>
     <td>0</td>
     <td>&nbsp;</td>

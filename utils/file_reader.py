@@ -80,10 +80,10 @@ class ExcelReader:
 
 
 if __name__ == '__main__':
-    y = 'E:\Test_framework\config\config.yml'
+    y = '/Users/apple/PycharmProjects/UIAutoCode/config/config.yml'
     reader = YamlReader(y)
     print(reader.data)
 
-    e = 'E:/Test_framework/data/baidu.xlsx'
-    reader = ExcelReader(e, title_line=True)
-    print(reader.data)
+    # e = 'E:/Test_framework/data/baidu.xlsx'
+    # reader = ExcelReader(e, title_line=True)
+    # print(reader.data)
