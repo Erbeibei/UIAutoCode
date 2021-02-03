@@ -1,6 +1,6 @@
-zhongye_net: http://www.zhongye.net/
-username: xx
-password: xx
+KFZC_URL: http://api.iscportal.isc.glb.cmos:50002/iscportal/index.html#/
+username: HA30020101
+password: 1qaz!QAZ
 log:
   file_name: test.log
   backup: 5

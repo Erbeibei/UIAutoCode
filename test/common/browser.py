@@ -4,7 +4,7 @@ from selenium import webdriver
 from utils.config import DRIVER_PATH, REPORT_PATH
 
 # 可根据需要自行扩展
-CHROMEDRIVER_PATH = DRIVER_PATH + '\chromedriver.exe'
+CHROMEDRIVER_PATH = DRIVER_PATH + '/chromedriver'
 IEDRIVER_PATH = DRIVER_PATH + '\IEDriverServer.exe'
 PHANTOMJSDRIVER_PATH = DRIVER_PATH + '\phantomjs.exe'
 
@@ -36,12 +36,12 @@ class Browser(object):
     #主程序异常截图
     def save_screen_shot(self, name='screen_shot'):
         day = time.strftime('%Y%m%d', time.localtime(time.time()))
-        screenshot_path = REPORT_PATH + '\\imgs\imgs_%s' % day
+        screenshot_path = REPORT_PATH + '/imgs/imgs_%s' % day
         if not os.path.exists(screenshot_path):
             os.makedirs(screenshot_path)
 
         tm = time.strftime('%H%M%S', time.localtime(time.time()))
-        screenshot = self.driver.save_screenshot(screenshot_path + '\\%s_%s.png' % (name, tm))
+        screenshot = self.driver.save_screenshot(screenshot_path + '/%s_%s.png' % (name, tm))
         return screenshot
 
     def close(self):
