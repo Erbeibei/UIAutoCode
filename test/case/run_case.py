@@ -1,13 +1,11 @@
 import unittest
-from utils.config import Config, DATA_PATH, REPORT_PATH, LOG_PATH, IMGS_PATH, LOGS_PATH, RESULT_PATH
-from utils.HTMLTestRunner import HTMLTestRunner
-from test.case.zy_school_case.test_login import TestLogin
-from utils.log import logger
-from utils.mail import Email
 import time
 import zipfile
 import shutil
 import os
+from utils.config import REPORT_PATH, LOG_PATH, IMGS_PATH, LOGS_PATH, RESULT_PATH
+from utils.HTMLTestRunner import HTMLTestRunner
+from test.case.community_case.test_admin_manage import TestAdminManage
 
 
 class RunCase(unittest.TestCase):
@@ -53,9 +51,9 @@ if __name__ == '__main__':
             report = REPORT_PATH + '\\report.html'
             suite = unittest.TestSuite()
             tests = [
-                TestLogin("test_login"),
-                TestLogin("test_login2"),
-                TestLogin("test_login3")
+                TestAdminManage("test_login"),
+                TestAdminManage("test_login2"),
+                TestAdminManage("test_login3")
             ]
             suite.addTests(tests)
             with open(report, 'wb') as f:

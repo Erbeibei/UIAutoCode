@@ -1,6 +1,8 @@
-KFZC_URL: http://api.iscportal.isc.glb.cmos:50002/iscportal/index.html#/
-username: HA30020101
-password: 1qaz!QAZ
+ZHSQ_URL: http://api.isccmp.isc.glb.cmos:50002/isccmp/index.html#/login
+userAcct: CS000400399
+userPwd: 1qaz!QAZ
+smsCode: 123456
+
 log:
   file_name: test.log
   backup: 5

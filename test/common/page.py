@@ -1,10 +1,10 @@
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from test.common.browser import Browser
+# from selenium.webdriver.remote.webdriver import WebDriver
 from utils.log import logger
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-
 
 class Page(Browser):
     def __init__(self, page=None, browser_type='firefox'):
@@ -43,7 +43,7 @@ class Page(Browser):
         查找到元素后进行下一步，时间20s
         """
         try:
-            WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(args))
+            WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located(args))
             time.sleep(1)
             return self.driver.find_element(*args)
         except Exception as msg:
@@ -56,7 +56,7 @@ class Page(Browser):
         查找到元素后进行下一步，时间20s
         """
         try:
-            WebDriverWait(self.driver, 20).until(EC.visibility_of_all_elements_located(args))
+            WebDriverWait(self.driver, 30).until(EC.visibility_of_all_elements_located(args))
             time.sleep(1)
             return self.driver.find_elements(*args)
         except Exception as msg:

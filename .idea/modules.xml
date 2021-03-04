@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/UIAutoCode.iml" filepath="$PROJECT_DIR$/.idea/UIAutoCode.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/testUI/.idea/testUI.iml" filepath="$USER_HOME$/Downloads/testUI/.idea/testUI.iml" />
     </modules>
   </component>
 </project>

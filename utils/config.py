@@ -8,7 +8,7 @@ BASE_PATH = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
 CONFIG_FILE = os.path.join(BASE_PATH, 'config', 'config.yml')
 DATA_PATH = os.path.join(BASE_PATH, 'data')
 DRIVER_PATH = os.path.join(BASE_PATH, 'drivers')
-LOG_PATH = os.path.join(BASE_PATH, 'log')
+LOG_PATH = os.path.join(BASE_PATH, 'report/logs')
 LOGS_PATH = os.path.join(BASE_PATH, 'report/logs')
 REPORT_PATH = os.path.join(BASE_PATH, 'report')
 IMGS_PATH = os.path.join(BASE_PATH, 'report/imgs')
@@ -29,4 +29,4 @@ class Config:
 
 if __name__ == '__main__':
     c = Config()
-    print(DRIVER_PATH)
+    print(REPORT_PATH)

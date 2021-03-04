@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="test_login" type="PythonConfigurationType" factoryName="Python">
+  <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python">
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
@@ -11,7 +11,7 @@
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <module name="UIAutoCode" />
-    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/case/admin_case/test_admin.py" />
+    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/case/admin_case/test.py" />
     <option name="PARAMETERS" value="" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <RunnerSettings RunnerId="PythonRunner" />
