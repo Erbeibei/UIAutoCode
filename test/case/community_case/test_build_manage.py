@@ -115,14 +115,13 @@ class TestBuildManage(unittest.TestCase):
                 if buildingNameStr is not None:
                     self.assertEqual(str(self.buildingNameEdit),buildingNameStr.text,msg="断言失败")
                 else:
-                    self.assertIsNotNone(buildingNameStr,msg="元素定位失败")
+                    self.assertIsNone(buildingNameStr,msg="元素定位失败")
                 if floorCountStr is not None:
                     self.assertEqual(str(self.floorCountEdit),floorCountStr.text,msg="断言失败")
                 else:
                     self.assertIsNotNone(floorCountStr,msg="元素定位失败")
             else:
-                self.assertIsNotNone(buildingNameStr,msg="元素定位失败")
-                return
+                self.assertIsNone(buildingNameStr,msg="元素定位失败")
         except Exception as msg:
             self.build_edit_page.save_screen_shot("test_findBuild")
             logger.info("异常信息:%s" %msg)
