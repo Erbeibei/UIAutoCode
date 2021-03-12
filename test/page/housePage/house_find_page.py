@@ -12,6 +12,7 @@ class HouseFindPage(Page, Browser):
     screenButton_loc = (By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/div/div[2]/div")
 
     def input_roomName(self,roomName):
+        self.find_element(*self.roomName_loc).clear()
         self.find_element(*self.roomName_loc).send_keys(roomName)
 
     def click_findButton(self):

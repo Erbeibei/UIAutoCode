@@ -13,6 +13,7 @@ LOGS_PATH = os.path.join(BASE_PATH, 'report/logs')
 REPORT_PATH = os.path.join(BASE_PATH, 'report')
 IMGS_PATH = os.path.join(BASE_PATH, 'report/imgs')
 RESULT_PATH = os.path.join(BASE_PATH, 'result')
+SOURCEIMG_PATH = os.path.join(BASE_PATH,'source/imgs')
 
 
 class Config:
@@ -29,4 +30,4 @@ class Config:
 
 if __name__ == '__main__':
     c = Config()
-    print(REPORT_PATH)
+    print(SOURCEIMG_PATH + "/13213156600.jpg")

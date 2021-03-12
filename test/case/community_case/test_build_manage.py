@@ -55,7 +55,7 @@ class TestBuildManage(unittest.TestCase):
     @添加楼栋
     description:正常添加
     """
-    buildingName = "一号楼"
+    buildingName = "天地社区"
     @unittest.skipUnless(True, "添加楼栋")
     def test_addBuild(self):
         try:
@@ -64,7 +64,7 @@ class TestBuildManage(unittest.TestCase):
             self.build_add_page.wait()
 
             self.build_add_page.input_buildingName(self.buildingName)
-            self.build_add_page.input_buildingNo(3)
+            self.build_add_page.input_buildingNo(2)
             self.build_add_page.input_unitNo(1)
             self.build_add_page.input_floorCount(8)
             self.build_add_page.input_roomCount(2)
@@ -84,14 +84,14 @@ class TestBuildManage(unittest.TestCase):
             if buildingNameStr is not None:
                 self.assertEqual(self.buildingName, buildingNameStr.text,msg="楼栋添加失败")
             else:
-                return
+                self.assertIsNone(buildingNameStr,msg="元素定位失败")
         except Exception as msg:
             self.admin_add_page.save_screen_shot("test_addBuild")
             logger.info("异常信息:%s" %msg)
             raise
 
     #编辑楼栋
-    buildingNameEdit = "二号楼"
+    buildingNameEdit = "金城社区"
     floorCountEdit = 10
     def test_editBuild(self):
         TestBuildManage.test_findBuild(self)
@@ -119,7 +119,7 @@ class TestBuildManage(unittest.TestCase):
                 if floorCountStr is not None:
                     self.assertEqual(str(self.floorCountEdit),floorCountStr.text,msg="断言失败")
                 else:
-                    self.assertIsNotNone(floorCountStr,msg="元素定位失败")
+                    self.assertIsNone(floorCountStr,msg="元素定位失败")
             else:
                 self.assertIsNone(buildingNameStr,msg="元素定位失败")
         except Exception as msg:

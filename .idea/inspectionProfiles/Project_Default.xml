@@ -24,6 +24,13 @@
         </list>
       </option>
     </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="test.page.ownerPage.owner_add_page.Broswer" />
+        </list>
+      </option>
+    </inspection_tool>
     <inspection_tool class="UnresolvedReference" enabled="false" level="ERROR" enabled_by_default="false" />
   </profile>
 </component>

@@ -6,6 +6,8 @@ import os
 from utils.config import REPORT_PATH, LOG_PATH, IMGS_PATH, LOGS_PATH, RESULT_PATH
 from utils.HTMLTestRunner import HTMLTestRunner
 from test.case.community_case.test_admin_manage import TestAdminManage
+from test.case.community_case.test_build_manage import TestBuildManage
+from test.case.community_case.test_house_manage import TestHouseManage
 
 
 class RunCase(unittest.TestCase):
@@ -37,7 +39,7 @@ class RunCase(unittest.TestCase):
         zip.close()
 
     def clear_text(self):
-        file_path = LOG_PATH + '\\test.log'
+        file_path = LOG_PATH + '/test.log'
         print(file_path)
         with open(file_path, "rb+") as f:
             f.read()
@@ -48,21 +50,26 @@ class RunCase(unittest.TestCase):
 if __name__ == '__main__':
             RunCase.clear_text(1)
             RunCase.combine_file(1)
-            report = REPORT_PATH + '\\report.html'
+            report = REPORT_PATH + '/report.html'
             suite = unittest.TestSuite()
             tests = [
-                TestAdminManage("test_login"),
-                TestAdminManage("test_login2"),
-                TestAdminManage("test_login3")
+                # TestAdminManage("test_addAdmin"),
+                # TestAdminManage("test_editAdmin"),
+                # TestAdminManage("test_delAdmin"),
+                TestBuildManage("test_addBuild"),
+                TestBuildManage("test_editBuild"),
+                # TestBuildManage("test_delBuild"),
+                TestHouseManage("test_addHouse"),
+                TestHouseManage("test_editHouse")
+                # TestHouseManage("test_delHouse")
             ]
             suite.addTests(tests)
             with open(report, 'wb') as f:
                 runner = HTMLTestRunner(stream=f, verbosity=2, title='Website test report',
                                         description='一句话描述此报告')
                 runner.run(suite)
-            shutil.copy(LOG_PATH + '\\test.log', LOGS_PATH + '\\test.log')
             tm = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
-            out_dir = RESULT_PATH + '\\report%s.zip' %tm
+            out_dir = RESULT_PATH + '/report%s.zip' %tm
             RunCase.zipDir(REPORT_PATH, out_dir)
             # e = Email(title='Website test report',
             #                 message='测试报告！',

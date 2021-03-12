@@ -43,7 +43,7 @@ class HouseAddPage(Page,Browser):
         self.find_element(*self.belongToBuilding_loc).click()#点开下拉框
 
     def click_buildListBox(self):
-        self.find_elements(*self.buildListBox_loc)[0].click()
+        self.find_elements(*self.buildListBox_loc)[-1].click()
 
     def click_belongTounit(self):
         self.find_element(*self.belongToUnit_loc).click()

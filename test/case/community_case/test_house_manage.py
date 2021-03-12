@@ -4,6 +4,7 @@ from utils.config import Config, REPORT_PATH
 from test.page.housePage.house_add_page import HouseAddPage
 from test.page.housePage.house_find_page import HouseFindPage
 from test.page.housePage.house_del_page import HouseDelPage
+from test.page.housePage.house_edit_page import HouseEditPage
 from utils.HTMLTestRunner import HTMLTestRunner
 from utils.log import logger
 from selenium.webdriver.common.by import By
@@ -24,6 +25,7 @@ class TestHouseManage(unittest.TestCase):
         self.house_add_page = HouseAddPage(self.login_page)
         self.house_find_page = HouseFindPage(self.login_page)
         self.house_del_page = HouseDelPage(self.login_page)
+        self.house_edit_page = HouseEditPage(self.login_page)
 
         try:
 
@@ -82,11 +84,9 @@ class TestHouseManage(unittest.TestCase):
 
 
     def test_delHouse(self):
+        self.test_serchHouse(self.editRoomName)
         try:
-            self.house_find_page.click_screenButton()
-            self.house_find_page.input_roomName(self.roomName)
-            self.house_find_page.click_findButton()
-            buildStr = self.house_find_page.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div/div[1]/div/table/tbody/tr/td[3]")
+            buildStr = self.house_del_page.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div/div[1]/div/table/tbody/tr/td[3]")
             if buildStr is not None:
                 self.house_del_page.click_delButton()
                 self.house_del_page.click_isYesButton()
@@ -103,6 +103,32 @@ class TestHouseManage(unittest.TestCase):
             logger.info("异常信息:%s" %msg)
             raise
 
+    editRoomName = "102"
+    def test_editHouse(self):
+        self.test_serchHouse(self.roomName)
+        self.house_edit_page.click_editButton()
+        try:
+            self.house_edit_page.input_roomName(self.editRoomName)
+            self.house_edit_page.click_roomId()
+            self.house_edit_page.click_chooseRoomId()
+            self.house_edit_page.click_saveButton()
+            self.test_serchHouse(self.editRoomName)
+            roomNameStr = self.house_edit_page.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div/div[1]/div/table/tbody/tr/td[5]")
+            if roomNameStr is not None:
+                self.assertEqual(roomNameStr.text,self.editRoomName,msg="断言失败")
+            else:
+                self.assertIsNone(roomNameStr,msg="元素定位失败")
+        except Exception as msg:
+            self.login_page.save_screen_shot("test_editHouse")
+            logger.info("异常信息:%s" %msg)
+            raise
+
+    def test_serchHouse(self,roomName):
+        self.house_find_page.refresh()
+        self.house_find_page.click_screenButton()
+        self.house_find_page.input_roomName(roomName)
+        self.house_find_page.click_findButton()
+
     def tearDown(self):
         logger.info("----END---")
         self.login_page.quit()
@@ -114,6 +140,7 @@ if __name__ == '__main__':
     suite = unittest.TestSuite()
     tests = [
         TestHouseManage("test_addHouse"),
+        TestHouseManage("test_editHouse"),
         TestHouseManage("test_delHouse")
             ]
     suite.addTests(tests)

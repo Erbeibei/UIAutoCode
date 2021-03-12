@@ -63,10 +63,11 @@ class TestAdminManage(unittest.TestCase):
             self.admin_add_page.wait(3)
             self.admin_add_page.refresh()
             self.admin_add_page.wait(3)
-            c = self.admin_add_page.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div/div[1]/div/table/tbody/tr[1]/td[2]").text
-            logger.info(c)
-            self.assertEqual(c,self.adminName)
-            self.admin_add_page.wait(3)
+            c = self.admin_add_page.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div/div[1]/div/table/tbody/tr[1]/td[2]")
+            if c is not None:
+                self.assertEqual(c.text,self.adminName,msg="断言失败")
+            else:
+                self.assertIsNone(c,msg="元素定位失败")
         except Exception as msg:
             self.admin_add_page.save_screen_shot("test_addAdmin")
             logger.info("异常信息:%s" %msg)
@@ -85,10 +86,11 @@ class TestAdminManage(unittest.TestCase):
             self.admin_edit__page.click_adminSavaButton()
             self.admin_edit__page.refresh()
             self.admin_edit__page.wait(3)
-            c = self.admin_edit__page.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div/div[1]/div/table/tbody/tr[1]/td[2]").text
-            logger.info(c)
-            self.assertEqual(c,self.adminNameEdit)
-            self.admin_edit__page.wait(3)
+            c = self.admin_edit__page.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div/div[1]/div/table/tbody/tr[1]/td[2]")
+            if c is not None:
+                self.assertEqual(c.text,self.adminNameEdit,msg="断言失败")
+            else:
+                self.assertIsNone(c,msg="元素定位失败")
         except Exception as msg:
             self.admin_edit__page.save_screen_shot("test_editAdmin")
             logger.info("异常信息:%s" %msg)
@@ -98,8 +100,7 @@ class TestAdminManage(unittest.TestCase):
     @unittest.skipUnless(True, "删除管理员")
     def test_delAdmin(self):
          try:
-             c = self.admin_del_page.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div/div[1]/div/table/tbody/tr/td[2]").text
-             logger.info(c)
+             c = self.admin_del_page.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div/div[1]/div/table/tbody/tr/td[2]")
              self.admin_del_page.click_delButton()
              self.admin_del_page.wait(3)
              self.admin_del_page.click_isYesButton()
@@ -108,10 +109,9 @@ class TestAdminManage(unittest.TestCase):
              self.admin_del_page.wait(3)
              b = self.admin_del_page.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/div/div[3]/div/div/div/div/div/div[1]/div/table/tbody/tr/td[2]")
              if b is not None:
-                logger.info(b.text)
-                self.assertNotEqual(c,b.text,msg="断言失败，删除失败")
+                self.assertNotEqual(c.text,b.text,msg="断言失败，删除失败")
              else:
-                return
+                self.assertIsNone(b,msg="元素定位失败，删除成功")
              self.admin_del_page.wait(3)
          except Exception as msg:
              self.admin_del_page.save_screen_shot("test_delAdmin")

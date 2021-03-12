@@ -1,13 +1,15 @@
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from test.common.browser import Browser
-# from selenium.webdriver.remote.webdriver import WebDriver
 from utils.log import logger
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.webelement import WebElement
+
 
 class Page(Browser):
-    def __init__(self, page=None, browser_type='firefox'):
+    def __init__(self, page=None, browser_type='chrome'):
         if page:
             self.driver = page.driver
         else:
@@ -47,7 +49,7 @@ class Page(Browser):
             time.sleep(1)
             return self.driver.find_element(*args)
         except Exception as msg:
-            logger.warning("元素查找失败:%s" %msg)
+            logger.info("元素查找失败:%s" %msg)
             return None
 
     def find_elements(self, *args):
